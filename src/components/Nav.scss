@@ -1,0 +1,30 @@
+.footer {
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  left: 0;
+
+  .nav-wrapper {
+    display: flex;
+  }
+  .nav-item {
+    font-size: 18px;
+    font-weight: 700;
+    text-align: center;
+    color: black;
+    padding: 20px 30px;
+    width: calc(100% / 3);
+    cursor: pointer;
+    border-top: 1px solid black;
+    border-right: 1px solid black;
+
+    &:last-child {
+      border-right: 0;
+    }
+
+    &:hover {
+      color: rgb(119, 0, 255);
+    }
+  }
+}
