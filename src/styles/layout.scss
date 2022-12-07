@@ -1,0 +1,16 @@
+.container {
+  margin: 20px auto;
+  width: 100%;
+
+  @media only screen and (max-width: 768px) {
+    width: 96%;
+  }
+  .wrapper {
+    width: 98%;
+    position: relative;
+  }
+}
+
+.main {
+  margin-top: 100px;
+}
