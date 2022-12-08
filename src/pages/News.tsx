@@ -5,15 +5,14 @@ import NewsItem from '../components/news/NewsItem';
 
 import './News.scss';
 import '../components/news/NewsItem.scss';
+import { newsApi } from '../common/apis';
 
 const News = () => {
   const [newsList, setNewsList] = useState([]);
 
   const getNews = async () => {
     try {
-      const res = await axios.get(
-        `https://api.nytimes.com/svc/news/v3/content/all/all.json?api-key=${process.env.REACT_APP_TIMES_API_KEY}`
-      );
+      const res = await axios.get(newsApi);
       setNewsList(res.data.results);
     } catch (error) {
       console.log(error);
