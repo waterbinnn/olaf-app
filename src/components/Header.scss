@@ -1,19 +1,26 @@
+@import '../styles/theme.scss';
+
 .header {
   &-container {
     position: fixed;
     top: 0;
     left: 50%;
-    width: 100%;
+    transform: translateX(-50%);
     padding: 20px;
-    background-color: white;
-    border-bottom: 1px solid black;
-    transform: translate(-50%, 0);
+    width: 550px;
+    border-bottom: 1px solid $black;
+    background-color: $white;
+    z-index: 100;
+
+    @include responsive('T') {
+      width: 100%;
+    }
 
     h1 {
       a {
         font-size: 40px;
         font-weight: 700;
-        color: black;
+        color: $black;
       }
     }
   }

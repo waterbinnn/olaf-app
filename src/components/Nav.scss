@@ -1,30 +1,37 @@
+@import '../styles/theme.scss';
+
 .footer {
-  width: 100%;
   position: fixed;
   bottom: 0;
-  right: 0;
-  left: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 550px;
+  z-index: 100;
+
+  @include responsive('T') {
+    width: 100%;
+  }
 
   .nav-wrapper {
     display: flex;
   }
   .nav-item {
+    padding: 20px 30px;
+    border-top: 1px solid $black;
+    border-right: 1px solid $black;
+    width: calc(100% / 3);
     font-size: 18px;
     font-weight: 700;
     text-align: center;
-    color: black;
-    padding: 20px 30px;
-    width: calc(100% / 3);
+    color: $black;
     cursor: pointer;
-    border-top: 1px solid black;
-    border-right: 1px solid black;
 
     &:last-child {
       border-right: 0;
     }
 
     &:hover {
-      color: rgb(119, 0, 255);
+      color: $active-color;
     }
   }
 }
