@@ -1,0 +1,16 @@
+$white: #ffffff;
+$black: #000000;
+$active-color: #915eff;
+$disabled-color: #dbdbdb;
+
+$todo-bg: #fcfcfc;
+$grey: #6b6b6b;
+$light-grey: #8f8f8f;
+
+@mixin responsive($screen) {
+  @if ($screen == 'T') {
+    @media screen and (max-width: 550px) {
+      @content;
+    }
+  }
+}
