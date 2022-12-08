@@ -31,7 +31,12 @@
       border-right: 0;
     }
 
-    &:hover {
+    &:hover,
+    :focus,
+    :active {
+      color: $active-color;
+    }
+    &.active {
       color: $active-color;
     }
   }
