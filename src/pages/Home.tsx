@@ -1,6 +1,6 @@
 import React from 'react';
 import Olaf from '../components/olaf/Olaf';
-import Header from '../components/Header';
+import Header from '../components/common/Header';
 
 import { dateString, weekday } from '../common/date';
 
@@ -9,7 +9,9 @@ import './Home.scss';
 const Home = () => {
   return (
     <>
-      <Header type="home">OLAF!</Header>
+      <Header type="home" link="/">
+        OLAF!
+      </Header>
       <main className="main">
         <p className="date">{dateString}</p>
         <p className="date-week">오늘은 {weekday}요일 이에요.</p>
