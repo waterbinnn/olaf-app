@@ -14,3 +14,13 @@ $light-grey: #8f8f8f;
     }
   }
 }
+
+@mixin textoverflow($line) {
+  width: 96%;
+  display: -webkit-inline-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: $line;
+  -webkit-box-orient: vertical;
+  word-break: keep-all;
+}
