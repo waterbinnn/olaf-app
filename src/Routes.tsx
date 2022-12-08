@@ -3,7 +3,7 @@ import Home from './pages/Home';
 import AddTodo from './pages/AddTodo';
 import EditTodo from './pages/EditTodo';
 import News from './pages/News';
-import Nav from './components/Nav';
+import Nav from './components/common/Nav';
 
 export const Router = () => {
   return (

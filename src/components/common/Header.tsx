@@ -5,24 +5,25 @@ import './Header.scss';
 
 type HeaderType = {
   type: string;
+  link: string;
   children: React.ReactNode;
 };
 
 const Header = (props: HeaderType) => {
-  const { children, type } = props;
+  const { children, type, link } = props;
 
   return (
     <header className="header-container">
-      {type !== 'home' ? (
+      {type === 'edit' ? (
         <>
           <button>{'<'}</button>
           <h1>
-            <Link to="/">{children}</Link>
+            <Link to={link}>{children}</Link>
           </h1>
         </>
       ) : (
         <h1>
-          <Link to="/">{children}</Link>
+          <Link to={link}>{children}</Link>
         </h1>
       )}
     </header>

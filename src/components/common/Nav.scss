@@ -1,4 +1,4 @@
-@import '../styles/theme.scss';
+@import '../../styles/theme.scss';
 
 .footer {
   position: fixed;
@@ -7,6 +7,7 @@
   transform: translateX(-50%);
   width: 550px;
   z-index: 100;
+  background-color: $white;
 
   @include responsive('T') {
     width: 100%;
