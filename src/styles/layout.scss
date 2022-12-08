@@ -1,10 +1,13 @@
+@import './theme.scss';
+
 .container {
   margin: 20px auto;
-  width: 100%;
+  width: 550px;
 
-  @media only screen and (max-width: 768px) {
-    width: 96%;
+  @include responsive('T') {
+    width: 100%;
   }
+
   .wrapper {
     width: 98%;
     position: relative;
@@ -13,4 +16,5 @@
 
 .main {
   margin-top: 100px;
+  padding-bottom: 50px;
 }
