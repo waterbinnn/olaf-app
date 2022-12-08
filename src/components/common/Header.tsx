@@ -14,7 +14,7 @@ const Header = (props: HeaderType) => {
 
   return (
     <header className="header-container">
-      {type === 'edit' ? (
+      {type === 'todo' ? (
         <>
           <button>{'<'}</button>
           <h1>
