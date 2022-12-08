@@ -7,7 +7,7 @@
   justify-content: center;
   align-items: center;
   margin: 10px auto;
-  transform: scale(0.6);
+  transform: scale(0.7);
 }
 
 .effect {
@@ -342,46 +342,8 @@
   font-weight: 400;
 }
 
-.wish {
-  position: relative;
-}
 
-.wish_btn {
-  position: absolute;
-  top: 20px;
-  right: 30px;
-  font-size: 40px;
-  padding: 10px;
-  border: none;
-  border-radius: 20%;
-  background-color: unset;
-  cursor: pointer;
-  margin-left: 30%;
-  transition: all .5s;
-}
 
-.wish_btn:after {
-  content: '복채';
-  display: block;
-  position: absolute;
-  top: 30px;
-  left: 50%;
-  font-size: 12px;
-  color: rgb(255, 215, 83);
-}
-
-.wish-btn:hover {
-  font-size: 50px;
-  top: 10px;
-}
-
-@media screen and (min-width:768px) {
-  .olaf-wrapper {
-    transform: scale(0.8);
-    margin: 15px auto;
-  }
-
-}
 
 
 /* animations  */
