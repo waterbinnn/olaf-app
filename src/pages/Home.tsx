@@ -48,6 +48,7 @@ const Home = () => {
             id="text"
             value={wish}
             onChange={(e) => setWish(e.target.value)}
+            autoComplete="off"
           />
           <button type="submit">🥕</button>
         </form>
