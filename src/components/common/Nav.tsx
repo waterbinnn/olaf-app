@@ -10,8 +10,8 @@ const Nav = () => {
   useEffect(() => {
     if (location.pathname === '/') {
       setPath('/');
-    } else if (location.pathname === '/addTodo') {
-      setPath('/addTodo');
+    } else if (location.pathname === '/todolist') {
+      setPath('/todolist');
     } else {
       setPath('/news');
     }
@@ -21,8 +21,8 @@ const Nav = () => {
     <footer className="footer">
       <nav className="nav-container">
         <ul className="nav-wrapper">
-          <li className={path === '/addTodo' ? 'nav-item active' : 'nav-item'}>
-            <Link to={'addTodo'}>TODO</Link>
+          <li className={path === '/todolist' ? 'nav-item active' : 'nav-item'}>
+            <Link to={'todolist'}>TODO</Link>
           </li>
           <li className={path === '/' ? 'nav-item active' : 'nav-item'}>
             <Link to={'/'}>HOME</Link>
