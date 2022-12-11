@@ -12,7 +12,7 @@ const NewsItem = (props: NewsItemProps) => {
   const handleClick = () => {
     window.open(data.url, '_blank');
   };
-  console.log(data);
+
   useEffect(() => {
     if (data.multimedia) {
       setImage(data.multimedia[2].url);
@@ -26,7 +26,7 @@ const NewsItem = (props: NewsItemProps) => {
   return (
     <>
       <li className="news-item" key={data.id} onClick={handleClick}>
-        <img className="news-image" src={image} />
+        <img className="news-image" src={image} alt={data.title} />
         <div className="news-text-wrapper">
           <strong className="news-title">{data.title}</strong>
           <p className="news-desc">{data.abstract}</p>
