@@ -6,7 +6,7 @@
   position: relative;
   margin-bottom: 10px;
   padding: 16px;
-  height: 120px;
+  height: 115px;
   border: 0.5px solid $active-color;
   border-radius: 4px;
   background: $todo-bg;
@@ -19,6 +19,10 @@
   border: 2px solid $black;
   border-radius: 1px;
   margin-right: 10px;
+
+  &.active {
+    background-color: $black;
+  }
 }
 
 .item {
@@ -28,9 +32,12 @@
     margin-bottom: 10px;
 
     .btn-delete {
-      font-size: 16px;
       position: absolute;
-      right: 14px;
+      right: 5px;
+      top: 3px;
+      padding: 5px;
+      font-size: 16px;
+      color: $grey;
 
       &:hover {
         opacity: 0.7;
@@ -43,6 +50,11 @@
     line-height: 1.2;
     @include textoverflow(2);
     width: 94%;
+
+    &.active {
+      text-decoration: line-through;
+      color: $grey;
+    }
   }
   &-bottom-wrapper {
     margin-left: 26px;
@@ -51,8 +63,9 @@
   &-desc {
     font-weight: 400;
     font-size: 14px;
+    line-height: 1.2;
     color: $grey;
-    @include textoverflow(3);
+    @include textoverflow(2);
     word-break: break-all;
   }
 }

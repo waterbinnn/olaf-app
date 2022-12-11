@@ -1,26 +1,59 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
+import { addTodo } from '../../redux/todoSlice';
 import './TodoItem.scss';
 
-const TodoItem = () => {
+type TodoPropsType = {
+  todo: {
+    id: number;
+    title: string;
+    desc: string;
+  };
+};
+
+const TodoItem = (props: TodoPropsType) => {
+  const { todo } = props;
+  const [isChecked, setIsChecked] = useState(false);
+
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+
+  const handleToEdit = () => {
+    navigate('/editTodo');
+  };
+
+  const handleCheck = (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault();
+    e.stopPropagation();
+    setIsChecked(!isChecked);
+  };
+
+  const handleDelete = (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault();
+    e.stopPropagation();
+  };
+
   return (
-    <div className="list-item">
+    <div className="list-item" onClick={handleToEdit} key={todo.id}>
       <div className="item-top-wrapper">
-        <button className="check-box" type="button"></button>
-        <strong className="item-title">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit, libero
-          tempore aliquid optio nulla repellat vitae sapiente hic! Cum, ipsa.
+        <button
+          className={isChecked ? 'check-box active' : 'check-box'}
+          type="button"
+          onClick={handleCheck}
+        ></button>
+
+        <strong className={isChecked ? 'item-title active' : 'item-title'}>
+          {todo.title}
         </strong>
-        <button className="btn-delete" type="button">
+
+        <button className="btn-delete" type="button" onClick={handleDelete}>
           ✕
         </button>
       </div>
+
       <div className="item-bottom-wrapper">
-        <p className="item-desc">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias
-          doloribus praesentium rem repudiandae blanditiis perferendis? Minus,
-          debitis quidem dolore, voluptatum sint ratione hic veniam provident
-          repellendus voluptate, blanditiis architecto molestias?
-        </p>
+        <p className="item-desc">{todo.desc}</p>
       </div>
     </div>
   );
