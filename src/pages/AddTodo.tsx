@@ -1,13 +1,34 @@
 import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
 import Header from '../components/common/Header';
+import { addTodo } from '../redux/todoSlice';
 import './Todo.scss';
 
 const AddTodo = () => {
   const [title, setTitle] = useState('');
   const [desc, setDesc] = useState('');
 
-  const handleSubmit = () => {};
-  const handleChange = () => {};
+  const dispatch = useDispatch();
+
+  const handleSubmit = () => {
+    let date = new Date();
+    let id = date.getTime();
+
+    let todoItem = {
+      id: id,
+      title: title,
+      desc: desc,
+    };
+    dispatch(addTodo(todoItem));
+  };
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement> | any): void => {
+    if (e.target.id === 'todoTitle') {
+      setTitle(e.target.value);
+    } else {
+      setDesc(e.target.value);
+    }
+  };
   return (
     <>
       <Header type="todo" link="/addTodo">
@@ -33,6 +54,9 @@ const AddTodo = () => {
               rows={10}
             />
           </div>
+          <button type="submit" className="btn-todo">
+            ADD TODO
+          </button>
         </form>
       </main>
     </>
