@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import { addTodo } from '../../redux/todoSlice';
+import { checkBox } from '../../redux/todoSlice';
 import './TodoItem.scss';
 
 type TodoPropsType = {
@@ -27,6 +27,7 @@ const TodoItem = (props: TodoPropsType) => {
     e.preventDefault();
     e.stopPropagation();
     setIsChecked(!isChecked);
+    dispatch(checkBox({ id: todo.id, completed: !isChecked }));
   };
 
   const handleDelete = (e: React.MouseEvent<HTMLButtonElement>) => {
