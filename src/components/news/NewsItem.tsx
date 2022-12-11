@@ -12,12 +12,14 @@ const NewsItem = (props: NewsItemProps) => {
   const handleClick = () => {
     window.open(data.url, '_blank');
   };
-
+  console.log(data);
   useEffect(() => {
     if (data.multimedia) {
       setImage(data.multimedia[2].url);
     } else {
-      setImage(data.thumbnail_standard);
+      setImage(
+        'https://bodybigsize.com/wp-content/uploads/2020/03/noimage-1.png'
+      );
     }
   }, [data.multimedia, data.thumbnail_standard]);
 
