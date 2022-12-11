@@ -1,0 +1,26 @@
+@import '../styles/theme.scss';
+
+.input-wrapper {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 19px;
+
+  label {
+    margin-bottom: 10px;
+  }
+
+  input,
+  textarea {
+    border: 1px solid $black;
+    padding: 12px 10px;
+
+    &:focus,
+    &:active {
+      border-color: $active-color;
+      outline: 1px solid $active-color;
+    }
+  }
+}

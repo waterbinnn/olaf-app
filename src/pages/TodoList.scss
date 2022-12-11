@@ -1,0 +1,13 @@
+@import '../styles/theme.scss';
+
+.btn-todo {
+  margin: 10px auto;
+  padding: 10px 0;
+  border-radius: 4px;
+  width: 100%;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 29px;
+  background-color: $black;
+  color: $white;
+}
