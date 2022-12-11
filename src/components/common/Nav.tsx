@@ -10,10 +10,10 @@ const Nav = () => {
   useEffect(() => {
     if (location.pathname === '/') {
       setPath('/');
-    } else if (location.pathname === '/todolist' || '/addTodo' || '/editTodo') {
-      setPath('/todolist');
-    } else {
+    } else if (location.pathname === '/news') {
       setPath('/news');
+    } else {
+      setPath('/todolist');
     }
   }, [location]);
 
