@@ -1,12 +1,14 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const getInitialWish = () => {
-  const wishList = window.localStorage.getItem('wishList');
+  const now = new Date();
+
+  const wishList = window.sessionStorage.getItem('wishList');
 
   if (wishList) {
     return JSON.parse(wishList);
   }
-  window.localStorage.setItem('wishList', '');
+  window.sessionStorage.setItem('wishList', '');
   return [];
 };
 
@@ -20,15 +22,15 @@ export const wishSlice = createSlice({
   reducers: {
     addWish: (state, action) => {
       state.wishList.push(action.payload);
-      const wishList = window.localStorage.getItem('wishList');
+      const wishList = window.sessionStorage.getItem('wishList');
       if (wishList) {
         const wishListArr = JSON.parse(wishList);
         wishListArr.push({
           ...action.payload,
         });
-        window.localStorage.setItem('wishList', JSON.stringify(wishListArr));
+        window.sessionStorage.setItem('wishList', JSON.stringify(wishListArr));
       } else {
-        window.localStorage.setItem(
+        window.sessionStorage.setItem(
           'wishList',
           JSON.stringify([
             {
@@ -39,7 +41,7 @@ export const wishSlice = createSlice({
       }
     },
     deleteWish: (state, action) => {
-      const wishList = window.localStorage.getItem('wishList');
+      const wishList = window.sessionStorage.getItem('wishList');
       if (wishList) {
         const wishListArr = JSON.parse(wishList);
         wishListArr.forEach((wish: any, index: number) => {
@@ -47,7 +49,7 @@ export const wishSlice = createSlice({
             wishListArr.splice(index, 1);
           }
         });
-        window.localStorage.setItem('wishList', JSON.stringify(wishListArr));
+        window.sessionStorage.setItem('wishList', JSON.stringify(wishListArr));
         state.wishList = wishListArr;
       }
     },
