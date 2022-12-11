@@ -11,12 +11,15 @@ type HeaderType = {
 
 const Header = (props: HeaderType) => {
   const { children, type, link } = props;
+  const navigate = useNavigate();
 
   return (
     <header className="header-container">
       {type === 'todo' ? (
         <>
-          <button>{'<'}</button>
+          <button type="button" onClick={() => navigate(-1)}>
+            {'<'}
+          </button>
           <h1>
             <Link to={link}>{children}</Link>
           </h1>
