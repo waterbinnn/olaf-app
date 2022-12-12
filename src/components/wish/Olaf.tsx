@@ -1,5 +1,4 @@
 import './Olaf.css';
-import { Link } from 'react-router-dom';
 
 export default function Olaf() {
   return (
@@ -36,13 +35,13 @@ export default function Olaf() {
             <div className="eyeInline left"></div>
 
             <div className="eyeInline right"></div>
-            <Link to="/wish">
+            <div>
               <div className="eye left"></div>
-            </Link>
+            </div>
 
-            <Link to="/wish">
+            <div>
               <div className="eye right"></div>
-            </Link>
+            </div>
 
             <div className="nosewrapper">
               <div className="carrot first"></div>

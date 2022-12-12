@@ -8,5 +8,3 @@ export const store = configureStore({
     todo: todoSlice,
   },
 });
-
-console.log(store.getState());
