@@ -23,11 +23,16 @@ export const wishSlice = createSlice({
     addWish: (state, action) => {
       state.wishList.push(action.payload);
       const wishList = window.sessionStorage.getItem('wishList');
+
       if (wishList) {
         const wishListArr = JSON.parse(wishList);
         wishListArr.push({
           ...action.payload,
         });
+        if (wishListArr.length === 2) {
+          alert('소원은 하루에 하나만 가능해요!');
+          wishListArr.pop();
+        }
         window.sessionStorage.setItem('wishList', JSON.stringify(wishListArr));
       } else {
         window.sessionStorage.setItem(
