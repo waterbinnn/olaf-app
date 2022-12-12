@@ -1,16 +1,9 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import { checkBox } from '../../redux/todoSlice';
+import { checkBox, deleteTodo } from '../../redux/todoSlice';
+import { TodoPropsType } from '../../common/types';
 import './TodoItem.scss';
-
-type TodoPropsType = {
-  todo: {
-    id: number;
-    title: string;
-    desc: string;
-  };
-};
 
 const TodoItem = (props: TodoPropsType) => {
   const { todo } = props;
@@ -19,8 +12,14 @@ const TodoItem = (props: TodoPropsType) => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
+  useEffect(() => {
+    if (todo.completed) {
+      setIsChecked(true);
+    }
+  }, [todo.completed]);
+
   const handleToEdit = () => {
-    navigate('/editTodo');
+    navigate(`/editTodo?id=${todo.id}`);
   };
 
   const handleCheck = (e: React.MouseEvent<HTMLButtonElement>) => {
@@ -33,6 +32,7 @@ const TodoItem = (props: TodoPropsType) => {
   const handleDelete = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
     e.stopPropagation();
+    dispatch(deleteTodo({ id: todo.id }));
   };
 
   return (
