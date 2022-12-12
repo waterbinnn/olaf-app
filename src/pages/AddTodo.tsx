@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import Header from '../components/common/Header';
 import { addTodo } from '../redux/todoSlice';
 import './Todo.scss';
@@ -8,6 +9,7 @@ const AddTodo = () => {
   const [title, setTitle] = useState('');
   const [desc, setDesc] = useState('');
 
+  const navigate = useNavigate();
   const dispatch = useDispatch();
 
   const handleSubmit = () => {
@@ -20,6 +22,7 @@ const AddTodo = () => {
       desc: desc,
     };
     dispatch(addTodo(todoItem));
+    navigate('/todolist');
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement> | any): void => {
