@@ -20,7 +20,7 @@ const TodoList = () => {
           type="button"
           onClick={() => navigate('/addTodo')}
         >
-          Add Todo
+          ADD TODO
         </button>
         <section className="list-container">
           <h2 className="visually-hidden">todo list</h2>
