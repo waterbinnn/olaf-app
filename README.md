@@ -1,17 +1,21 @@
 # Olaf App
 
+## Deploy
+
+https://olaf-wish-todo.netlify.app/
+
 ## Description
 
 나만의 Todo, Wish를 작성할 수 있고,
 오늘의 Date, 뉴욕 타임즈의 실시간 인기 News 를 볼 수 있는 웹앱 서비스입니다.
 
-## stack
+## Stack
 
 Typescript, React.js, Sass, Redux-toolkit
 
 ## 구현기능
 
-Main Tab
+Home Tab
 
 - 오늘의 날짜와 요일을 볼 수 있습니다.
 - 오늘의 소원을 작성 할 수 있으며 Session storage에 저장하도록 해주었습니다.
@@ -45,8 +49,6 @@ Todo Tab
 | <img width="350px;" src="https://user-images.githubusercontent.com/96714788/206971384-9503159b-9396-4a76-9ade-56a94a47aea4.gif"> | <img width="350px;" src="https://user-images.githubusercontent.com/96714788/206971737-ad009afd-f6fe-4aed-8033-6639e684e4a9.gif"> | <img width="350px;" src="https://user-images.githubusercontent.com/96714788/206971412-ae019eb7-dffa-42f7-9a40-10f8f50dab71.gif"> |
 
 ## Trouble shooting
-
-## trouble shooting
 
 - EditTodo에 AddTodo 의 데이터를 불러오는 것에 대한 고민이 있었습니다. main 페이지에서 todo item을 클릭했을 때 id와 데이터를 불러와야하는데, local storage에서 데이터를 불러와 넣어주려 해도 id를 불러와야 했기 때문에 아예 AddTodo 와 EditTodo 의 라우트를 따로 분리할지 하나로 통합해서 삼항연산자로 보여줄 지 고민하였습니다.
   삼항연산자를 쓰면 비효율적이고 코드가 복잡하고 가독성이 떨어질 것 같아 라우트를 분리하였습니다.
