@@ -8,12 +8,7 @@ import { dateString, weekday } from '../common/date';
 import { addWish } from '../redux/wishSlice';
 
 import './Home.scss';
-
-export interface WishStateType {
-  wish: {
-    wishList: string[];
-  };
-}
+import { WishStateType } from '../common/types';
 
 const Home = () => {
   const [wish, setWish] = useState('');

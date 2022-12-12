@@ -1,10 +1,6 @@
 import { useDispatch } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
 import { deleteWish } from '../../redux/wishSlice';
-
-type WishItemType = {
-  data: any;
-};
+import { WishItemType } from '../../common/types';
 
 const WishItem = (props: WishItemType) => {
   const { data } = props;
