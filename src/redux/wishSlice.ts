@@ -1,8 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const getInitialWish = () => {
-  const now = new Date();
-
   const wishList = window.sessionStorage.getItem('wishList');
 
   if (wishList) {
